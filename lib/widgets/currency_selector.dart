@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:currency_convertor/currency.dart';
-import 'package:currency_convertor/currencyitem.dart';
+import 'package:currency_convertor/model/currency.dart';
+import 'package:currency_convertor/widgets/currencyitem.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 

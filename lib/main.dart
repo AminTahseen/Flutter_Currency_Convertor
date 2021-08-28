@@ -1,12 +1,11 @@
 import 'dart:convert';
 
-import 'package:currency_convertor/HexColor.dart';
-import 'package:currency_convertor/currency_selector.dart';
-import 'package:currency_convertor/textField.dart';
+import 'package:currency_convertor/utils/HexColor.dart';
+import 'package:currency_convertor/widgets/currency_selector.dart';
+import 'package:currency_convertor/widgets/textField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
-import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   runApp(MyApp());
