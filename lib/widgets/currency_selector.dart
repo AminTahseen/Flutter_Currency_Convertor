@@ -23,6 +23,13 @@ class _CurrencySelectorState extends State<CurrencySelector> {
     });
     widget._selectCurrency(currencySelect);
     Navigator.pop(context);
+    currencyList.clear();
+    fetchCurrencies().then((value) {
+      value.forEach((currencyCode, currencyText) {
+        currencyList.add(
+            Currency(currency_code: currencyCode, currency_text: currencyText));
+      });
+    });
   }
 
   Future fetchCurrencies() async {
@@ -39,6 +46,19 @@ class _CurrencySelectorState extends State<CurrencySelector> {
 
   var currencyList = <Currency>[];
   var list = ['USD', 'PKR', 'INR'];
+
+  void filterList(String filterTerm) {
+    var tempData = currencyList
+        .where((element) => element.currency_code
+            .toLowerCase()
+            .contains(filterTerm.toLowerCase()))
+        .toList();
+
+    print("list $tempData");
+    setState(() {
+      currencyList = tempData;
+    });
+  }
 
   @override
   void initState() {
@@ -75,6 +95,9 @@ class _CurrencySelectorState extends State<CurrencySelector> {
                           TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                     TextField(
+                        onChanged: (String value) async {
+                          filterList(value);
+                        },
                         controller: filterController,
                         decoration: InputDecoration(
                           hintText: "Filter Currency",

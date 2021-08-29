@@ -109,6 +109,7 @@ class _HomePageState extends State<HomePage> {
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: HexColor('#273c75')),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),

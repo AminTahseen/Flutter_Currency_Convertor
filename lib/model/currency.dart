@@ -9,4 +9,10 @@ class Currency {
       currency_text: json['nbLike'] as String,
     );
   }
+  @override
+  String toString() {
+    // TODO: implement toString
+
+    return currency_code;
+  }
 }
